@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot - Document Q&A</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAG Chatbot</h1>
+            <p class="subtitle">Ask questions about your uploaded documents</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="upload-section">
+                    <h3>Upload Documents</h3>
+                    <input type="file" id="fileInput" accept=".pdf,.txt,.md" multiple>
+                    <button onclick="uploadFiles()" class="btn btn-primary">Upload</button>
+                    <div id="uploadStatus"></div>
+                </div>
+                
+                <div class="documents-section">
+                    <h3>Uploaded Documents</h3>
+                    <div id="documentsList"></div>
+                </div>
+                
+                <div class="sessions-section">
+                    <h3>Conversations</h3>
+                    <button onclick="newSession()" class="btn btn-secondary">New Chat</button>
+                    <div id="sessionsList"></div>
+                </div>
+            </div>
+            
+            <div class="chat-section">
+                <div id="chatMessages" class="chat-messages"></div>
+                
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Ask a question about your documents..." 
+                        onkeypress="handleKeyPress(event)"
+                    >
+                    <button onclick="sendMessage()" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
