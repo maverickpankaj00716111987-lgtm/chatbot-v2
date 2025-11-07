@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()  # ✅ ensure .env is loaded before Settings() is used
+
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
